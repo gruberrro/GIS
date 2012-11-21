@@ -30,12 +30,6 @@ nodataVal = arcpy.GetParameterAsText(4)
 extractIntVal = int(extractVal)
 nodataIntVal = int(nodataVal)
 
-##env.workspace = "C:/JL/Data/BiomeTurnover"
-##arcpy.env.extent = "C:/JL/Data/Sources/Climate/Shafer/land"
-##arcpy.env.snapRaster = "C:/JL/Data/Sources/Climate/Shafer/land"
-##inRaster = "biome_current.tif"
-##outLocation = "C:/JL/Data/BiomeTurnover/test"
-
 # open a search cursor to collect all the raster values in the input raster dataset.
 rows = arcpy.SearchCursor(inRaster, "", "", "VALUE", "")
 
