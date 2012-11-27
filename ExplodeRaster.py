@@ -22,13 +22,14 @@ arcpy.CheckOutExtension("Spatial")
 arcpy.env.overwriteOutput = True
 
 # set the environment, raster dataset and output folder based on user input
-env.workspace = arcpy.GetParameterAsText(0)
 inRaster = arcpy.GetParameterAsText(1)
 outLocation = arcpy.GetParameterAsText(2)
-extractVal = arcpy.GetParameterAsText(3)
-nodataVal = arcpy.GetParameterAsText(4)
+arcpy.env.mask = arcpy.GetParameterAsText(3)
+extractVal = arcpy.GetParameterAsText(4)
+nodataVal = arcpy.GetParameterAsText(5)
 extractIntVal = int(extractVal)
 nodataIntVal = int(nodataVal)
+env.workspace = arcpy.GetParameterAsText(2)
 
 # open a search cursor to collect all the raster values in the input raster dataset.
 rows = arcpy.SearchCursor(inRaster, "", "", "VALUE", "")
